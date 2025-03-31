@@ -1,10 +1,14 @@
 stream-to-kafka-service:
-  stream-content-sources:
-    - JAVA
-    - Microservices
-    - Kafka
-    - Elasticsearch
+  active-model: infinite
+  fixedCount: 10
   min-stream-interval-ms: 1000
   max-stream-interval-ms: 5000
   welcome-message: Hello microservices!
-  enable-v1-streamer: false
+  helper:
+    stream-content-sources:
+      - JAVA
+      - Microservices
+      - Kafka
+      - Elasticsearch
+    min-text-length: 5
+    max-text-length: 10

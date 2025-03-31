@@ -1,4 +1,4 @@
-package dev.nuts.runner;
+package dev.nuts.spec;
 
 public interface StreamRunner {
     void start();

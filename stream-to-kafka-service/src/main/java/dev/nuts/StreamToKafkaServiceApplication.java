@@ -1,7 +1,7 @@
 package dev.nuts;
 
 import dev.nuts.config.StreamToKafkaServiceConfigData;
-import dev.nuts.runner.StreamRunner;
+import dev.nuts.spec.StreamRunner;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -25,7 +25,7 @@ public class StreamToKafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("App starts...");
-        log.info(Arrays.toString(configData.getStreamContentSources().toArray(new String[0])));
+        log.info("Active Runner Model is [{}]", runner.getClass());
         log.info(configData.getWelcomeMessage());
         runner.start();
     }

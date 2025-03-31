@@ -1,17 +1,24 @@
 package dev.nuts.config;
 
+import dev.nuts.runner.SupportRunnerType;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.List;
 
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "stream-to-kafka-service")
 public class StreamToKafkaServiceConfigData {
-    private List<String> streamContentSources;
     private int minStreamIntervalMs;
     private int maxStreamIntervalMs;
     private String welcomeMessage;
+    private SupportRunnerType activeModel;
+    private Integer fixedCount; // activeModel이 fixed 일때만 사용
+
+    public Integer getFixedCountIfActiveModelIsFixed() {
+        if (SupportRunnerType.FIXED == activeModel) {
+            return fixedCount;
+        }
+        return null;
+    }
 }
