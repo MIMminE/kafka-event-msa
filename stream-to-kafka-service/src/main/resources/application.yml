@@ -1,5 +1,5 @@
 stream-to-kafka-service:
-  active-model: infinite
+  active-model: fixed
   fixedCount: 10
   min-stream-interval-ms: 1000
   max-stream-interval-ms: 5000
