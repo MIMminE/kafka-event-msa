@@ -1,6 +1,6 @@
 stream-to-kafka-service:
   active-model: fixed
-  fixedCount: 10
+  fixedCount: 3
   min-stream-interval-ms: 1000
   max-stream-interval-ms: 5000
   welcome-message: Hello microservices!

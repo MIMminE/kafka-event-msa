@@ -1,9 +1,9 @@
 package dev.nuts.runner;
 
-import dev.nuts.config.StreamToKafkaServiceConfigData;
-import dev.nuts.spec.Status;
+import dev.nuts.configdata.StreamToKafkaServiceConfig;
 import dev.nuts.spec.StreamListener;
 import dev.nuts.spec.StreamRunner;
+import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ import java.util.concurrent.*;
 public class InfiniteStreamRunner implements StreamRunner {
 
     private static final Logger log = LoggerFactory.getLogger(InfiniteStreamRunner.class);
-    private final StreamToKafkaServiceConfigData configData;
+    private final StreamToKafkaServiceConfig configData;
     private final StreamListener listener;
     private final StreamHelper streamHelper;
     private final Random random = new Random();
@@ -52,5 +52,10 @@ public class InfiniteStreamRunner implements StreamRunner {
             }
 
         }, randomMs, TimeUnit.MILLISECONDS);
+    }
+
+    @PreDestroy
+    public void destroy() {
+        log.info("Destroying stream-to-kafka-service");
     }
 }

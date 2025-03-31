@@ -1,8 +1,7 @@
 package dev.nuts.runner;
 
 
-import dev.nuts.config.StreamHelperConfigData;
-import dev.nuts.config.StreamToKafkaServiceConfigData;
+import dev.nuts.configdata.StreamHelperConfigData;
 import dev.nuts.spec.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

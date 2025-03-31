@@ -1,6 +1,5 @@
-package dev.nuts.config;
+package dev.nuts.configdata;
 
-import dev.nuts.runner.SupportRunnerType;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "stream-to-kafka-service")
-public class StreamToKafkaServiceConfigData {
+public class StreamToKafkaServiceConfig {
     private int minStreamIntervalMs;
     private int maxStreamIntervalMs;
     private String welcomeMessage;

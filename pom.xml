@@ -10,14 +10,16 @@
 
     <groupId>dev.nuts</groupId>
     <artifactId>kafka-event-msa</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <name>kafka-event-msa</name>
     <url>http://maven.apache.org</url>
 
+
     <modules>
         <module>stream-to-kafka-service</module>
+        <module>config-data</module>
     </modules>
 
     <properties>

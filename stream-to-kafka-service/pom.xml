@@ -4,7 +4,7 @@
     <parent>
         <groupId>dev.nuts</groupId>
         <artifactId>kafka-event-msa</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <artifactId>stream-to-kafka-service</artifactId>
@@ -18,6 +18,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>dev.nuts</groupId>
+            <artifactId>config-data</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>

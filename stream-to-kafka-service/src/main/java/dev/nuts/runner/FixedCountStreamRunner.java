@@ -1,8 +1,9 @@
 package dev.nuts.runner;
 
-import dev.nuts.config.StreamToKafkaServiceConfigData;
+import dev.nuts.configdata.StreamToKafkaServiceConfig;
 import dev.nuts.spec.StreamListener;
 import dev.nuts.spec.StreamRunner;
+import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -17,7 +18,7 @@ import java.util.concurrent.*;
 @Slf4j
 public class FixedCountStreamRunner implements StreamRunner {
 
-    private final StreamToKafkaServiceConfigData configData;
+    private final StreamToKafkaServiceConfig configData;
     private final StreamListener listener;
     private final StreamHelper streamHelper;
     private final Random random = new Random();
@@ -47,6 +48,12 @@ public class FixedCountStreamRunner implements StreamRunner {
                 throw new RuntimeException(e);
             }
         }
+        executorService.shutdown();
         log.info("End the stream");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        log.info("Destroying stream-to-kafka-service");
     }
 }

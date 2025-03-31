@@ -1,4 +1,4 @@
-package dev.nuts.config;
+package dev.nuts.configdata;
 
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Max;
