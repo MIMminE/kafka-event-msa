@@ -12,3 +12,10 @@ stream-to-kafka-service:
       - Elasticsearch
     min-text-length: 5
     max-text-length: 10
+
+retry-config:
+  initial-interval-ms: 1000
+  max-interval-ms: 10000
+  multiplier: 2.0
+  max-attempts: 3
+  sleep-time-ms: 2000

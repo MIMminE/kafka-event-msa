@@ -23,6 +23,7 @@
         <module>kafka/kafka-producer</module>
         <module>kafka/kafka-model</module>
         <module>kafka/kafka-admin</module>
+        <module>common-config</module>
     </modules>
 
     <properties>
