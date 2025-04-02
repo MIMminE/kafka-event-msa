@@ -15,6 +15,6 @@ public class KafkaConfigData {
     private String schemaRegistryUrlKey;
     private String topicName;
     private Integer numOfPartitions;
-    private Integer replicationFactor;
+    private Short replicationFactor; // 카프카 클라이언트 설정 API에서 Short으로 받고 있음
     private List<String> topicNamesToCreate;
 }
