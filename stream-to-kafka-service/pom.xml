@@ -20,8 +20,22 @@
     <dependencies>
         <dependency>
             <groupId>dev.nuts</groupId>
+            <artifactId>kafka-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.nuts</groupId>
+            <artifactId>kafka-admin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.nuts</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.nuts</groupId>
             <artifactId>config-data</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
